@@ -1,4 +1,9 @@
 .car{
-    color: rgb(255, 252, 251); 
-    text-shadow: 2px 3px 3px red;
+    color: rgb(255, 1, 1); 
+    font-family: 'Bangers', cursive; 
+    font-size: 1vw; 
+    text-shadow: 1px 1px 2px black;
+}
+.then{
+    
 }
