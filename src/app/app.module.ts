@@ -4,6 +4,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProfileComponent } from './profile/profile.component';
+import { FormsModule }from '@angular/forms';
+import { GitService } from './git.service';
+
 
 @NgModule({
   declarations: [
@@ -12,9 +15,10 @@ import { ProfileComponent } from './profile/profile.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [GitService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
@@ -25,10 +29,8 @@ export class AppModule { }
 // import { HttpClient,HttpHeaders }from '@angular/common/http';
 // import { AppRoutingModule } from './app-routing.module';
 // import { AppComponent } from './app.component';
-// import { ProfileComponent } from './profile/profile.component';
-// import { ProfileService } from './profile.service'
 // import { HttpClientModule } from '@angular/common/http';
-// import { FormsModule }from '@angular/forms';
+// 
 // @NgModule({
 //   declarations: [
 //     AppComponent,
@@ -39,9 +41,9 @@ export class AppModule { }
 //     BrowserModule,
 //     AppRoutingModule,
 //     HttpClientModule,
-//     FormsModule
+//     
 //   ],
-//   providers: [ProfileService],
+//   providers: [],
 //   bootstrap: [AppComponent]
 // })
 // export class AppModule { }
