@@ -29,23 +29,24 @@
           <button type="button" class="btn btn-danger btn-rounded" style="border-radius: 20px; height: 8vh; font-family: 'Bangers', cursive; font-size: 1.2vw; text-shadow: 2px 3px 3px black;">Search for your friend in github</button>
         </div>
         <div class="container mt-3"  style="width: 16vw;">
-          <form class="d-flex input-group w-auto">
+          <form  (ngSubmit)="sub()" class="d-flex input-group w-auto md-form form-sm active-cyan-2" >
             <input
               type="search"
               class="form-control rounded"
+              name="username"
               placeholder="Search"
+              [(ngModel)]="username" (keyup)="search()"
               aria-label="Search"
               aria-describedby="search-addon"
               style="font-family: 'Bangers', cursive; height: 5vh; margin-right: 6px;"/>
             <span class="input-group-text border-0 " id="search-addon" style="color: rgb(0, 0, 0);">
-              <i class="fas fa-search"></i>
+              <i type="submit" class="fas fa-search" aria-hidden="true"></i>
             </span>
           </form>
         </div>
       </div>
-
       <div class="col-md-6">
-       <app-profile></app-profile>
+        <app-profile></app-profile>
       </div>
     </div>
   </div>
@@ -53,7 +54,56 @@
 
 
 
+{% comment %} 
+<div class="container-fluid" id="head">
+
+ <form action="" class="form">
+      <div class="form-group">
+        <input type="text" placeholder="Search or jump to...."class="form-control" [(ngModel)]="username"
+          name="username" (keyup)="findProfile()">     
+      </div>
+  </form>
 
 
 
-<!-- <router-outlet></router-outlet> -->
+ <br><br>
+ <div class="landing-page">
+  <div *ngIf="profile" class="prof">
+    <div class="col-sm-8">
+      <div class="col-sm-2">
+        <img class="img" src="{{profile.avatar_url}}">
+      </div>
+      <div class="col-sm-6">
+        <div>
+          <hr>
+          <p  class="avatar-details">
+            <span class="span"> {{profile.followers}} Followers</span>&nbsp;<br>
+
+            <span class="span"> {{profile.following}} Following </span>&nbsp;<br>
+
+            <span class="span"> {{profile.public_gists}} Gists</span>&nbsp;<br>
+            <span class="span">{{profile.public_repos}} Repositories</span>&nbsp;
+         </p>
+          <a href="{{profile.html_url}}" target="_blank" class=" view  btn btn-primary">  View in Github</a>
+          <hr>
+          <hr>
+         
+          <p>
+          </p>
+          <hr>
+          <br>
+        </div>
+     </div>
+    </div>
+  </div> 
+</div>
+</div>
+ {% endcomment %}
+
+
+
+
+
+
+
+
