@@ -1,19 +1,19 @@
-<div>
+<div *ngIf="profile" class="prof">
   <div class="row">
       <div class="card col-md-6" style="width: 18rem;">
         <ul class="list-group list-group-flush text-left">
-          <li class="list-group-item car-1">Name : <span class="car">Carbon</span></li>
-          <li class="list-group-item car-1">Repos : <span class="car">3</span></li>
-          <li class="list-group-item car-1">followers : <span class="car">3</span></li>
-          <li class="list-group-item car-1">following : <span class="car">3</span></li>
+          <li class="list-group-item car-1">Name : <span class="car">{{profile.name}}</span></li>
+          <li class="list-group-item car-1">Repos : <span class="car">{{profile.public_repos}}</span></li>
+          <li class="list-group-item car-1">followers : <span class="car">{{profile.followers}}</span></li>
+          <li class="list-group-item car-1">following : <span class="car">{{profile.following}}</span></li>
         </ul>
       </div>
       <div class="col-md-6">
         <img
-        src=""
+        src="{{profile.avatar_url}}"
         class="img-fluid rounded"
         alt=""/>
+        <a href="{{profile.html_url}}" target="_blank" class=" view  btn btn-danger">  View in Github</a>
       </div>
   </div>
 <div>
-  <!-- src="{{profile.avatar_url}}" -->
