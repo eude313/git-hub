@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { ProfileComponent } from './profile/profile.component';
 import { FormsModule }from '@angular/forms';
 import { GitService } from './git.service';
+import { HttpClient,HttpHeaders, HttpClientModule }from '@angular/common/http';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { GitService } from './git.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     FormsModule
   ],
   providers: [GitService],
@@ -23,27 +25,3 @@ import { GitService } from './git.service';
 })
 export class AppModule { }
 
-
-// import { BrowserModule } from '@angular/platform-browser';
-// import { NgModule } from '@angular/core';
-// import { HttpClient,HttpHeaders }from '@angular/common/http';
-// import { AppRoutingModule } from './app-routing.module';
-// import { AppComponent } from './app.component';
-// import { HttpClientModule } from '@angular/common/http';
-// 
-// @NgModule({
-//   declarations: [
-//     AppComponent,
-//     ProfileComponent,
-    
-//   ],
-//   imports: [
-//     BrowserModule,
-//     AppRoutingModule,
-//     HttpClientModule,
-//     
-//   ],
-//   providers: [],
-//   bootstrap: [AppComponent]
-// })
-// export class AppModule { }
