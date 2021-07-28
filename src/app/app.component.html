@@ -1,3 +1,4 @@
+<router-outlet></router-outlet>
 <nav class="navbar navbar-light ">
   <div class="container-fluid">
     <a class="navbar-brand" style="color: azure; text-shadow: 2px 2px 3px black; font-size: 3vw; font-family: 'Bangers', cursive;"> <span style="color: rgb(251, 38, 0);">The </span>  Hub</a>
@@ -35,70 +36,43 @@
               class="form-control rounded"
               name="username"
               placeholder="Search"
-              [(ngModel)]="username" (keyup)="search()"
+              [(ngModel)]="username" (keyup)="findProfile()"
               aria-label="Search"
               aria-describedby="search-addon"
               style="font-family: 'Bangers', cursive; height: 5vh; margin-right: 6px;"/>
             <span class="input-group-text border-0 " id="search-addon" style="color: rgb(0, 0, 0);">
-              <i type="submit" class="fas fa-search" aria-hidden="true"></i>
+               <!-- <i type="submit" class="fas fa-search" aria-hidden="true"></i>   -->
             </span>
           </form>
         </div>
       </div>
       <div class="col-md-6">
-        <app-profile></app-profile>
+        <div class="row">
+          <div class="card col-md-6" style="width: 18rem;">
+            <ul class="list-group list-group-flush text-left">
+              <li class="list-group-item car-1">Name : <span class="car">{{profile.name}}</span></li>
+              <li class="list-group-item car-1">Repos : <span class="car">{{profile.public_repos}}</span></li>
+              <li class="list-group-item car-1">followers : <span class="car">{{profile.followers}}</span></li>
+              <li class="list-group-item car-1">following : <span class="car">{{profile.following}}</span></li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <img
+            src="{{profile.avatar_url}}"
+            class="img-fluid rounded"
+            alt=""/>
+            <a href="{{profile.html_url}}" target="_blank" class=" view  btn btn-danger">  View in Github</a>
+          </div>
+      </div>
       </div>
     </div>
   </div>
 </div>
-
-
-
-{% comment %} 
-<div class="container-fluid" id="head">
-
- <form action="" class="form">
-      <div class="form-group">
-        <input type="text" placeholder="Search or jump to...."class="form-control" [(ngModel)]="username"
-          name="username" (keyup)="findProfile()">     
-      </div>
-  </form>
-
-
-
- <br><br>
- <div class="landing-page">
-  <div *ngIf="profile" class="prof">
-    <div class="col-sm-8">
-      <div class="col-sm-2">
-        <img class="img" src="{{profile.avatar_url}}">
-      </div>
-      <div class="col-sm-6">
-        <div>
-          <hr>
-          <p  class="avatar-details">
-            <span class="span"> {{profile.followers}} Followers</span>&nbsp;<br>
-
-            <span class="span"> {{profile.following}} Following </span>&nbsp;<br>
-
-            <span class="span"> {{profile.public_gists}} Gists</span>&nbsp;<br>
-            <span class="span">{{profile.public_repos}} Repositories</span>&nbsp;
-         </p>
-          <a href="{{profile.html_url}}" target="_blank" class=" view  btn btn-primary">  View in Github</a>
-          <hr>
-          <hr>
-         
-          <p>
-          </p>
-          <hr>
-          <br>
-        </div>
-     </div>
-    </div>
-  </div> 
+<div class="container"  style="color: rgb(251, 38, 0); text-shadow: 2px 3px 3px red;">
+  <h1 style="font-size: 7vw; font-family: 'Bangers', cursive;">
+  <h2>{{profile.bio}}</h2>
 </div>
-</div>
- {% endcomment %}
+
 
 
 

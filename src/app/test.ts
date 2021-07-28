@@ -1,3 +1,6 @@
+export class Test {
+}
+
 import 'zone.js/dist/zone-testing';
 import { getTestBed } from '@angular/core/testing';
 import {

@@ -3,16 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ProfileComponent } from './profile/profile.component';
 import { FormsModule }from '@angular/forms';
 import { GitService } from './git.service';
-import { HttpClient,HttpHeaders, HttpClientModule }from '@angular/common/http';
+import { HttpClientModule }from '@angular/common/http';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ProfileComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
