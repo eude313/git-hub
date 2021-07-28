@@ -12,30 +12,25 @@ export class AppComponent implements OnInit {
   profile:any;
   repos:any;
   username!:string;
-  profileService: any;
   
   constructor(private gitService:GitService){
        this.gitService.updateProfile(this.username);
        this.gitService.getProfileInfo().subscribe((profile) => {
-         console.log(profile);
          this.profile = profile;
        });
     
       this.gitService.getProfileRepos().subscribe((repos) => {
-        console.log(repos);
         this.repos = repos;
       });
     }
 
     findProfile(){
         this.gitService.updateProfile(this.username);
-        this.gitService.getProfileInfo().subscribe((profile: any) => {
-          console.log(profile);
+        this.gitService.getProfileInfo().subscribe((profile) => {
           this.profile = profile;
         });
       
-        this.gitService.getProfileRepos().subscribe((repos: any) => {
-          console.log(repos);
+        this.gitService.getProfileRepos().subscribe((repos) => {
           this.repos = repos;
         })
       }
